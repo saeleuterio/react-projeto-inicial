@@ -53,11 +53,11 @@ const completed = [
 ];
 
 function App() {
-  const [showDialog, setShowDialog] = useState(false)
+  const [showDialog, setShowDialog] = useState(false);
 
   const toggleDialog = () => {
-    setShowDialog(!showDialog)
-    console.log('alternar modal')
+    setShowDialog(!showDialog);
+    console.log("alternar modal");
   };
 
   return (
@@ -72,17 +72,19 @@ function App() {
           <SubHeading>Para estudar</SubHeading>
           <ToDoList>
             {todos.map(function (t) {
-              return <ToDoItem key={t.id} item={t} />
+              return <ToDoItem key={t.id} item={t} />;
             })}
           </ToDoList>
           <SubHeading>Concluído</SubHeading>
           <ToDoList>
             {completed.map(function (t) {
-              return <ToDoItem key={t.id} item={t} />
+              return <ToDoItem key={t.id} item={t} />;
             })}
           </ToDoList>
           <Footer>
-            <Dialog isOpen={showDialog} onClose={toggleDialog}/>
+            <Dialog isOpen={showDialog} onClose={toggleDialog}>
+              <p>This modal dialog has a groovy backdrop!</p>
+            </Dialog>
             <FabButton onClick={toggleDialog}>
               <IconPlus />
             </FabButton>
